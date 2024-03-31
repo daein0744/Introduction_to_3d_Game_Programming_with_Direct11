@@ -1,5 +1,5 @@
 # 연습문제 해답
-1. alt-enter로 화면 변경 막으시오.
+1. alt-enter눌렀을 때 화면 변경 안되게 변경하세요.
 ```c++
   // d3dapp.cpp
   HR(dxgiFactory->CreateSwapChain(md3dDevice, &sd, &mSwapChain));
