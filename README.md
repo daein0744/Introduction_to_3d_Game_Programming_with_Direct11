@@ -20,3 +20,19 @@ std::wstring msg = L"adapter num : ";
 msg += std::to_wstring(i);
 MessageBox(mhMainWnd, msg.c_str(), L"Adapter num", MB_OK);
 ```
+3. Adapter::CheckInterfaceSupport메서드를 이용해서 시스템의 어댑터들이 Direct3D 11을 지원하는지 알아내는 코드 작성
+   -> 마이크로소프트에서 사용하지 말라고해서 스킵.
+4. IDXGIAdapter::EnumOutputs메서드를 이용해서 기본 어탭터의 출력 대상이 몇 개인지 알아내는 코드 작성.
+```c++
+UINT i = 0;
+IDXGIOutput* pOutput;
+std::vector<IDXGIOutput*> vOutputs;
+while (dxgiAdapter->EnumOutputs(i, &pOutput) != DXGI_ERROR_NOT_FOUND)
+{
+	vOutputs.push_back(pOutput);
+	++i;
+}
+std::wstring msg = L"output adapter num : ";
+msg += std::to_wstring(i);
+MessageBox(mhMainWnd, msg.c_str(), L"Output Adapter Num", MB_OK);
+```
