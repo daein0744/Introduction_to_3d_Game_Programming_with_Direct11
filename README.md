@@ -7,16 +7,16 @@
 ```
 2. 어댑터 수 출력하세요.
 ```c++
-	// d3dapp.cpp
-	UINT i = 0;
-	IDXGIAdapter* pAdapter;
-	std::vector <IDXGIAdapter*> vAdapters;
-	while (dxgiFactory->EnumAdapters(i, &pAdapter) != DXGI_ERROR_NOT_FOUND)
-	{
-		vAdapters.push_back(pAdapter);
-		++i;
-	}
-	std::wstring msg = L"adapter num : ";
-	msg += std::to_wstring(i);
-	MessageBox(mhMainWnd, msg.c_str(), L"Adapter num", MB_OK);
+// d3dapp.cpp
+UINT i = 0;
+IDXGIAdapter* pAdapter;
+std::vector <IDXGIAdapter*> vAdapters;
+while (dxgiFactory->EnumAdapters(i, &pAdapter) != DXGI_ERROR_NOT_FOUND)
+{
+	vAdapters.push_back(pAdapter);
+	++i;
+}
+std::wstring msg = L"adapter num : ";
+msg += std::to_wstring(i);
+MessageBox(mhMainWnd, msg.c_str(), L"Adapter num", MB_OK);
 ```
