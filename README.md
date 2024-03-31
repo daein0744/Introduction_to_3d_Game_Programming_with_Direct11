@@ -7,6 +7,7 @@
 ```
 2. 어댑터 수 출력하세요.
 ```c++
+	// d3dapp.cpp
 	UINT i = 0;
 	IDXGIAdapter* pAdapter;
 	std::vector <IDXGIAdapter*> vAdapters;
